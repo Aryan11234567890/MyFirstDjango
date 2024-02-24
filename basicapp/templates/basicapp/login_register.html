@@ -1,0 +1,42 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+{% if page == 'login'%}
+
+<div>
+    <form method="POST" action="">
+        {% csrf_token %}
+        <label>Username: </label>
+        <input type="text" name="username" placeholder="Username"/>
+
+        <label>Password: </label>
+        <input type="text" name="password" placeholder="Password"/>
+
+        <input type="submit" value="Submit" />
+
+    </form>
+    <p>Not a val hate yet? become one!</p>
+    <a href="{% url 'register' %}">Register here.</a>
+</div>
+
+
+{% else %}
+
+
+<div>
+    <form method="POST" action="">
+        {% csrf_token %}
+
+        {{form.as_p}}
+
+        <input type="submit" value="Register" />
+
+    </form>
+    <p>Already a hater? Then just sign in!!</p>
+    <a href="{% url 'login' %}">login pls.</a>
+</div>
+
+
+{% endif %}
+{% endblock content %}

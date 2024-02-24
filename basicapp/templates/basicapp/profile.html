@@ -1,0 +1,27 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<style>
+    .profile-container{
+        display: grid;
+        grid-template-columns: 1fr 3fr 1fr;
+    }
+</style>
+
+<h1>{{user.username}}</h1>
+
+<div class="profile-container">
+    <div>
+        {% include 'basicapp/topic_comp.html' %}
+    </div>
+
+    <div>
+        {% include 'basicapp/feed_comp.html' %}
+    </div>
+
+    <div>
+        {% include 'basicapp/activity_comp.html' %}
+    </div>
+</div>
+
+{% endblock content %}

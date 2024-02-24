@@ -1,0 +1,43 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+
+<style>
+    .home-container{
+        display: grid;
+        grid-template-columns: 1fr 3fr 1fr;
+    }
+</style>
+
+
+<div class="home-container">
+    <div class="sidebar">
+        {% include 'basicapp/topic_comp.html' %}
+    </div>
+
+    <div>
+
+        
+            {% if room_count == 1 %}
+                <h5>{{room_count}} hating pod available</h5>
+            {% else %}
+                <h5>{{room_count}} hating pods available</h5>
+            {% endif %}
+        <a href="{% url 'create-room' %}">Create Room</a>
+        
+        {% include 'basicapp/feed_comp.html' %}
+
+        
+    </div>
+
+    <div>
+        {% include 'basicapp/activity_comp.html' %}
+    </div> 
+    
+
+</div>
+
+
+
+{% endblock content %}
