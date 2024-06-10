@@ -10,12 +10,6 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
 # Create your views here.
 
-# rooms = [
-#     {'id' : 1, 'name' : 'Hate Valorant!!!😂1'},
-#     {'id' : 2, 'name' : 'Hate Valorant!!!😂2'},
-#     {'id' : 3, 'name' : 'Hate Valorant!!!😂3'},
-# ]
-
 
 def home(request):
     q = request.GET.get('q') if request.GET.get('q') != None else ''
